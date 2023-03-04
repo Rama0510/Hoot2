@@ -14,6 +14,7 @@ import com.app.librarymanagement.R;
 public class CreateAccountActivity extends AppCompatActivity implements View.OnClickListener {
     Button btnLogin;
     TextView tvCreateAccount;
+    //Create Account for Library Management System
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +24,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         btnLogin.setOnClickListener(this);
         tvCreateAccount.setOnClickListener(this);
     }
-
+    //Onclick Operation
     @Override
     public void onClick(View v) {
         switch (v.getId()){
