@@ -31,8 +31,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         tvCreateAccount = findViewById(R.id.CreateAccount);
         btnLogin.setOnClickListener(this);
         tvCreateAccount.setOnClickListener(this);
-        
+
     }
+    
 
     @SuppressLint("NonConstantResourceId")
     @Override
