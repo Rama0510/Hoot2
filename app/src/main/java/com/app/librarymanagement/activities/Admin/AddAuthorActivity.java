@@ -9,7 +9,8 @@ import com.app.librarymanagement.R;
 
 public class AddAuthorActivity extends AppCompatActivity {
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) 
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_author);
         findViewById(R.id.btnBack).setOnClickListener(view->{
