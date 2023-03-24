@@ -37,6 +37,7 @@ public class BooksActivity extends AppCompatActivity {
         });
     }
 
+
     public void setUpRecyclerView(){
         List<Book> list = getBooksData();
         recyclerView = findViewById(R.id.ListMyBooks);
