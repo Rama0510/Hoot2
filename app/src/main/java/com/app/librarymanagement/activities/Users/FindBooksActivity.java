@@ -28,7 +28,7 @@ public class FindBooksActivity extends AppCompatActivity {
         setContentView(R.layout.activity_find_books);
         setUpRecyclerView();
         findViewById(R.id.btnBack).setOnClickListener(view->{
-            this.finish();
+            startActivity(new Intent(getApplicationContext(),DashboardUserActivity.class));
         });
     }
 

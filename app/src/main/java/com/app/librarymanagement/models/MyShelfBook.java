@@ -2,18 +2,19 @@ package com.app.librarymanagement.models;
 
 import androidx.annotation.NonNull;
 
-public class BookRequest {
+public class MyShelfBook {
     private int id;
     private int book_id;
     private int user_id;
     private String bookName;
     private String userName;
     private String requestedDate;
+    private String returnedDate;
     private String status;
 
-    public BookRequest(){}
-    public BookRequest(int id, int book_id, int user_id, String bookName, String userName,
-                       String requestedDate, String status) {
+    public MyShelfBook(){}
+    public MyShelfBook(int id, int book_id, int user_id, String bookName, String userName,
+                       String requestedDate, String returnedDate, String status) {
         this.id = id;
         this.book_id = book_id;
         this.user_id = user_id;
@@ -45,6 +46,14 @@ public class BookRequest {
 
     public void setUser_id(int user_id) {
         this.user_id = user_id;
+    }
+
+    public String getReturnedDate() {
+        return returnedDate;
+    }
+
+    public void setReturnedDate(String returnedDate) {
+        this.returnedDate = returnedDate;
     }
 
     public String getBookName() {

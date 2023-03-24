@@ -44,13 +44,13 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/ListMyBooks"
             android:layout_width="match_parent"
-            android:visibility="gone"
             android:layout_height="match_parent"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="10dp"
+            android:visibility="gone"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:text="Your Shelve is Empty!"
             android:textColor="@color/gray"

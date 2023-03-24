@@ -1,20 +1,29 @@
 package com.app.librarymanagement.models.adapters;
 
+import static com.app.librarymanagement.helpers.common_helper.addDay;
+
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.librarymanagement.R;
 import com.app.librarymanagement.activities.Admin.RequestedBookDetailsActivity;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 public class OverDueBooksAdapter extends RecyclerView.Adapter<OverDueBooksAdapter.BookRequest> {
@@ -32,13 +41,25 @@ public class OverDueBooksAdapter extends RecyclerView.Adapter<OverDueBooksAdapte
         return new OverDueBooksAdapter.BookRequest(v);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onBindViewHolder(@NonNull BookRequest holder, int position) {
         com.app.librarymanagement.models.BookRequest book = list.get(position);
         holder.requested_book_name.setText(book.getBookName());
         holder.request_user_name.setText(book.getUserName());
-        holder.tvCollectDate.setText(book.getRequestedDate());
-        holder.tvDueDate.setText(book.getRequestedDate());
+        holder.tvCollectDate.setText("On date: "+book.getRequestedDate());
+        holder.tvDueDate.setText("Due On: "+book.getRequestedDate());
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        Date strDate = null;
+        try {
+            strDate = sdf.parse(book.getRequestedDate());
+            Date dueDate = addDay(strDate,15);
+            long time_difference = new Date().getTime() - dueDate.getTime();
+            long days_difference = (time_difference / (1000*60*60*24)) % 365;
+            holder.tvDueDate.setText("Overdue: "+ days_difference);
+        }catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

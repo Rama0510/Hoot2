@@ -35,7 +35,6 @@ public class CreateAccountActivity extends BaseActivity {
     Button btnLogin;
     TextView tvCreateAccount;
     private FirebaseAuth mAuth;
-    
     private DatabaseReference mDatabase;
     EditText etEmail,etPassword,etConfPass,etAge,etName,etMobile,etAddress;
     RadioButton rbMale,rbFemale,rbOther;

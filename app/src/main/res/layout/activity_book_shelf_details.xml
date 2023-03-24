@@ -42,18 +42,17 @@ tools:context=".activities.Users.DashboardUserActivity">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Requested book"
+            android:text="Book Details"
             android:textColor="#ffffff"
             android:padding="10dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         </LinearLayout>
         <ImageView
             android:id="@+id/user_item_image"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:padding="15dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_gravity="center"
+            android:padding="10dp"
             android:layout_marginStart="9dp"
             app:srcCompat="@drawable/ic_baseline_book_24"
             tools:ignore="VectorDrawableCompat" />
@@ -64,18 +63,7 @@ tools:context=".activities.Users.DashboardUserActivity">
             android:orientation="vertical"
             android:id="@+id/parent_layout">
             <TextView
-                android:id="@+id/tvUserName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="9dp"
-                android:maxLines="1"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:text="User Name"
-                android:textSize="30dp"
-                android:textColor="@color/secondary" />
-            <TextView
-                android:id="@+id/book_title"
+                android:id="@+id/tvBookName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="9dp"
@@ -83,9 +71,19 @@ tools:context=".activities.Users.DashboardUserActivity">
                 android:layout_gravity="center"
                 android:textAlignment="center"
                 android:text="Book Name"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="30dp"
+                android:textColor="@color/secondary" />
+            <TextView
+                android:id="@+id/tvAuthor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:maxLines="1"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:text="Author"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/secondary_dark" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -99,11 +97,11 @@ tools:context=".activities.Users.DashboardUserActivity">
                     android:maxLines="1"
                     android:layout_gravity="center"
                     android:textAlignment="center"
-                    android:text="Requested Date: "
+                    android:text="Collected Date: "
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@color/gray" />
             <TextView
-                    android:id="@+id/tvReqDate"
+                    android:id="@+id/tvPublishedOn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="9dp"
@@ -114,7 +112,75 @@ tools:context=".activities.Users.DashboardUserActivity">
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@color/gray" />
         </LinearLayout>
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:maxLines="1"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:text="Returned Date: "
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/gray" />
+            <TextView
+                android:id="@+id/tvReturnedDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:maxLines="1"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:text="01-01-2023"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/gray" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tvShortDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:maxLines="1"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:text="Short description"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/gray" />
+        <TextView
+            android:id="@+id/tvLongDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:maxLines="1"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:text="Long description"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/gray" />
+        <RatingBar
+                    android:id="@+id/auth_view_rating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="50dp"
+                    android:max="5"
+                    android:scaleX=".6"
+                    android:scaleY=".6"
+                    android:transformPivotX="0dp"
+                    android:transformPivotY="0dp"
+                    android:rating= "5.0"
+                    android:textAlignment="center"
+                    android:progressTint="@color/secondary_dark"
+                    android:stepSize="1"/>
         <TextView
             android:id="@+id/tvCount"
             android:layout_width="wrap_content"
@@ -123,35 +189,22 @@ tools:context=".activities.Users.DashboardUserActivity">
             android:maxLines="1"
             android:layout_gravity="center"
             android:textAlignment="center"
-            android:text="No of Books: 15"
+            android:text="No of Books: 0"
             android:textStyle="bold"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@color/gray" />
         </LinearLayout>
-    <LinearLayout
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_marginTop="50dp"
-        android:orientation="horizontal">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Accept"
-            android:id="@+id/btnRequestAccept"
-            android:textColor="@color/white"
-            android:layout_marginRight="50dp"
-            android:background="@color/secondary_dark"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Reject"
-            android:layout_marginLeft="50dp"
-            android:id="@+id/btnRequestReject"
-            android:textColor="@color/white"
-            android:background="@color/red"/>
-    </LinearLayout>
+        android:text="Send Request"
+        android:id="@+id/btnSendRequest"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/white"
+        android:background="@color/secondary_dark"/>
     </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,7 @@
 package com.app.librarymanagement.activities.Users;
 
+import static com.app.librarymanagement.helpers.common_helper.getMyShelfBooks;
+
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,13 +9,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.librarymanagement.R;
 import com.app.librarymanagement.models.Book;
+import com.app.librarymanagement.models.MyShelfBook;
 import com.app.librarymanagement.models.adapters.BooksAdapter;
+import com.app.librarymanagement.models.adapters.BooksShelfAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MyShelvesActivity extends AppCompatActivity {
-    BooksAdapter adapter;
+    BooksShelfAdapter adapter;
     RecyclerView recyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +29,9 @@ public class MyShelvesActivity extends AppCompatActivity {
         });
     }
     public void setUpRecyclerView(){
-        List<Book> list = new ArrayList<>();
+        List<MyShelfBook> list = getMyShelfBooks();
         recyclerView = findViewById(R.id.ListMyBooks);
-        adapter = new BooksAdapter(list, getApplicationContext());
+        adapter = new BooksShelfAdapter(list, getApplicationContext());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

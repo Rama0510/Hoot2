@@ -1,6 +1,5 @@
 package com.app.librarymanagement.activities.Admin;
 
-import static com.app.librarymanagement.helpers.common_helper.getBooksData;
 import static com.app.librarymanagement.helpers.common_helper.getRequestedBooksData;
 
 import android.os.Bundle;
@@ -10,9 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.librarymanagement.R;
-import com.app.librarymanagement.models.Book;
 import com.app.librarymanagement.models.BookRequest;
-import com.app.librarymanagement.models.adapters.BooksAdapter;
 import com.app.librarymanagement.models.adapters.BooksRequestsAdapter;
 
 import java.util.List;
