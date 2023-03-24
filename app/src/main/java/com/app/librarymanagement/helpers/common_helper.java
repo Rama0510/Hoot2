@@ -1,24 +1,19 @@
 package com.app.librarymanagement.helpers;
 
-import android.widget.Toast;
-
 import com.app.librarymanagement.models.Author;
 import com.app.librarymanagement.models.Book;
 import com.app.librarymanagement.models.BookRequest;
-import com.app.librarymanagement.models.MyShelfBook;
 import com.app.librarymanagement.models.User;
-import com.app.librarymanagement.models.adapters.BooksShelfAdapter;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 public class common_helper {
     public static boolean getAdminLogin(String email, String password){
         return email.equals("admin@gmail.com") && password.equals("admin123");
+    }
+    public static boolean getUserLogin(String email, String password){
+        return email.equals("user@gmail.com") && password.equals("user123");
     }
 
     public static List<Book> getBooksData(){
@@ -44,8 +39,7 @@ public class common_helper {
         );
         return list;
     }
-
-    public static List<Book> getAuthorBooks(int auth_id){
+ public static List<Book> getAuthorBooks(int auth_id){
         List<Book> list = getBooksData();
         List<Book> auth_list = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
@@ -70,92 +64,34 @@ public class common_helper {
         list.add(new BookRequest(1,
                 1,
                 1,
-                "The Great Gatsby",
-                "F. James",
-                "05-03-2023",
-                "approved")
+                "Book 1",
+                "User 1",
+                "01-03-2023",
+                "3.5")
         );
         list.add(new BookRequest(2,
                 2,
                 2,
-                "One Hundred Years of Solitude",
-                "Heera Khushi",
-                "20-03-2023",
-                "approved")
+                "Book 2",
+                "User 2",
+                "02-03-2023",
+                "3.5")
         );
         return list;
     }
 
+    public static List<BookRequest> getOverdueBooksData(){
+        List<BookRequest> list = new ArrayList<>();
 
-    public static List<MyShelfBook> getMyShelfBooks(){
-        List<MyShelfBook> list = new ArrayList<>();
-        list.add(new MyShelfBook(1,
-                1,
-                1,
-                "The Great Gatsby",
-                "F. James",
-                "05-03-2023",
-                "20-03-2023",
-                "approved")
-        );
-        list.add(new MyShelfBook(2,
+        list.add(new BookRequest(2,
                 2,
                 2,
-                "One Hundred Years of Solitude",
-                "Heera Khushi",
-                "20-03-2023",
-                "30-03-2023",
-                "approved")
+                "Book 2",
+                "User 2",
+                "02-03-2023",
+                "3.5")
         );
         return list;
-    }
-
-    public static MyShelfBook getMyShelfDetails(int id){
-        List<MyShelfBook> list = getMyShelfBooks();
-        MyShelfBook myShelfBook = new MyShelfBook();
-        for (int i = 0; i < list.size(); i++) {
-            if(list.get(i).getId() == id) myShelfBook = list.get(i);
-        }
-        return myShelfBook;
-    }
-
-    public static BookRequest getRequestedBookData(int id)
-    {
-        BookRequest book = new BookRequest();
-        List<BookRequest> list = getRequestedBooksData();
-        for (int i = 0; i < list.size(); i++) {
-            if(list.get(i).getId() == id) book = list.get(i);
-        }
-        return book;
-    }
-
-    public static List<BookRequest> getOverdueBooksData() {
-        List<BookRequest> list = getRequestedBooksData();
-        List<BookRequest> list_overdue = new ArrayList<>();
-
-        for (int i = 0; i < list.size(); i++) {
-            String requestedDate = list.get(i).getRequestedDate();
-            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-            Date strDate = null;
-            try {
-                strDate = sdf.parse(requestedDate);
-                Date due_date = addDay(strDate, 15);
-                if (new Date().after(due_date)) {
-                    //due true
-                    list_overdue.add(list.get(i));
-                }
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-        }
-        return list_overdue;
-    }
-
-    public static Date addDay(Date date, int i) {
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(date);
-        cal.add(Calendar.DAY_OF_YEAR, i);
-        return cal.getTime();
     }
 
     public static List<Author> getAuthorsData(){
