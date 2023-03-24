@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.app.librarymanagement'I
+    namespace 'com.app.librarymanagement'
     compileSdk 33
 
     defaultConfig {
