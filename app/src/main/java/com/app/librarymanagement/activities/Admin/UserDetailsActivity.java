@@ -26,6 +26,7 @@ public class UserDetailsActivity extends AppCompatActivity {
             this.finish();
         });
 
+
         tvUserName= findViewById(R.id.tvUserName);
         tvEmail= findViewById(R.id.tvEmail);
         tvAge= findViewById(R.id.tvAge);
