@@ -69,6 +69,7 @@ public class CreateAccountActivity extends BaseActivity {
 
     }
 
+
     private void login(View view) {
         startActivity(new Intent(getApplicationContext(), LoginActivity.class));
     }
