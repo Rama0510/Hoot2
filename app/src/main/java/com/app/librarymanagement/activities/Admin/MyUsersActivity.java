@@ -28,6 +28,7 @@ public class MyUsersActivity extends AppCompatActivity {
         });
     }
 
+
     public void setUpRecyclerView(){
         List<User> list = getUsersData();
         RecyclerView recyclerView = findViewById(R.id.ListMyUsers);
