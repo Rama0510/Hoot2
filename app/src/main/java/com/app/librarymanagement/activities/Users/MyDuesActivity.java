@@ -1,7 +1,5 @@
 package com.app.librarymanagement.activities.Users;
 
-import static com.app.librarymanagement.helpers.common_helper.getOverdueBooksData;
-
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,15 +8,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.librarymanagement.R;
 import com.app.librarymanagement.models.Book;
-import com.app.librarymanagement.models.BookRequest;
 import com.app.librarymanagement.models.adapters.BooksAdapter;
-import com.app.librarymanagement.models.adapters.OverDueBooksAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MyDuesActivity extends AppCompatActivity {
-    OverDueBooksAdapter adapter;
+    BooksAdapter adapter;
     RecyclerView recyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +26,9 @@ public class MyDuesActivity extends AppCompatActivity {
         });
     }
     public void setUpRecyclerView(){
-        List<BookRequest> list = getOverdueBooksData();
+        List<Book> list = new ArrayList<>();
         recyclerView = findViewById(R.id.ListMyBooks);
-        adapter = new OverDueBooksAdapter(list, getApplicationContext());
+        adapter = new BooksAdapter(list, getApplicationContext());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

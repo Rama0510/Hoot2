@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.app.librarymanagement.R;
 import com.app.librarymanagement.activities.Admin.DashboardAdminActivity;
@@ -22,17 +21,13 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-
 public class LoginActivity extends BaseActivity {
     Button btnLogin;
     TextView tvCreateAccount;
     EditText etEmail, etPassword;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +39,6 @@ public class LoginActivity extends BaseActivity {
         etPassword = findViewById(R.id.etPassword);
         tvCreateAccount = findViewById(R.id.CreateAccount);
         mAuth = FirebaseAuth.getInstance();
-
         btnLogin.setOnClickListener(view -> {
             if (!validateForm()) {
                 return;

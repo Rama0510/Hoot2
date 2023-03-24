@@ -13,13 +13,12 @@ import com.app.librarymanagement.R;
 import com.app.librarymanagement.models.Author;
 import com.app.librarymanagement.models.Book;
 import com.app.librarymanagement.models.adapters.AuthorsAdapter;
-import com.app.librarymanagement.models.adapters.AuthorsUserAdapter;
 import com.app.librarymanagement.models.adapters.FindBookAdapter;
 
 import java.util.List;
 
 public class AuthorsActivity extends AppCompatActivity {
-    AuthorsUserAdapter adapter;
+    AuthorsAdapter adapter;
     RecyclerView recyclerView;
 
     @Override
@@ -34,7 +33,7 @@ public class AuthorsActivity extends AppCompatActivity {
     public void setUpRecyclerView(){
         List<Author> list = getAuthorsData();
         recyclerView = findViewById(R.id.ListMyAuthors);
-        adapter = new AuthorsUserAdapter(list, getApplicationContext());
+        adapter = new AuthorsAdapter(list, getApplicationContext());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

@@ -2,7 +2,6 @@ package com.app.librarymanagement.models.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +14,8 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.librarymanagement.R;
-import com.app.librarymanagement.activities.Users.BookDetailsActivity;
+import com.app.librarymanagement.activities.Admin.BookDetailsActivity;
+import com.app.librarymanagement.activities.Users.SendBookRequestActivity;
 import com.app.librarymanagement.models.Book;
 
 import java.util.Collections;
@@ -44,11 +44,7 @@ public class FindBookAdapter extends RecyclerView.Adapter<FindBookAdapter.MyBook
         holder.tvPublish.setText(book.getPublished());
         holder.tvRating.setRating(Float.parseFloat(book.getRating()));
         holder.bookCard.setOnClickListener(view->{
-                Intent intent = new Intent(view.getContext(), BookDetailsActivity.class);
-                Bundle extras = new Bundle();
-                extras.putInt("book_id",book.getId());
-                intent.putExtras(extras);
-                view.getContext().startActivity(intent);
+            view.getContext().startActivity(new Intent(view.getContext(), SendBookRequestActivity.class));
         });
     }
 

@@ -3,22 +3,20 @@ package com.app.librarymanagement.helpers;
 import com.app.librarymanagement.models.Author;
 import com.app.librarymanagement.models.Book;
 import com.app.librarymanagement.models.BookRequest;
-import com.app.librarymanagement.models.MyShelfBook;
 import com.app.librarymanagement.models.User;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 public class common_helper {
     public static boolean getAdminLogin(String email, String password){
         return email.equals("admin@gmail.com") && password.equals("admin123");
     }
+    public static boolean getUserLogin(String email, String password){
+        return email.equals("user@gmail.com") && password.equals("user123");
+    }
 
-    public static List<Book> getBooksData() {
+    public static List<Book> getBooksData(){
         List<Book> list = new ArrayList<>();
         list.add(new Book(1,
                 1,
@@ -41,8 +39,7 @@ public class common_helper {
         );
         return list;
     }
-
-    public static List<Book> getAuthorBooks(int auth_id) {
+ public static List<Book> getAuthorBooks(int auth_id){
         List<Book> list = getBooksData();
         List<Book> auth_list = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
@@ -52,7 +49,8 @@ public class common_helper {
         return auth_list;
     }
 
-    public static Book getBookDetails(int id) {
+    public static Book getBookDetails(int id)
+    {
         Book book = new Book();
         List<Book> list = getBooksData();
         for (int i = 0; i < list.size(); i++) {
@@ -66,93 +64,37 @@ public class common_helper {
         list.add(new BookRequest(1,
                 1,
                 1,
-                "The Great Gatsby",
-                "F. James",
-                "05-03-2023",
-                "approved")
+                "Book 1",
+                "User 1",
+                "01-03-2023",
+                "3.5")
         );
         list.add(new BookRequest(2,
                 2,
                 2,
-                "One Hundred Years of Solitude",
-                "Heera Khushi",
-                "20-03-2023",
-                "approved")
+                "Book 2",
+                "User 2",
+                "02-03-2023",
+                "3.5")
         );
         return list;
     }
 
-    public static List<MyShelfBook> getMyShelfBooks(){
-        List<MyShelfBook> list = new ArrayList<>();
-        list.add(new MyShelfBook(1,
-                1,
-                1,
-                "The Great Gatsby",
-                "F. James",
-                "05-03-2023",
-                "20-03-2023",
-                "approved")
-        );
-        list.add(new MyShelfBook(2,
+    public static List<BookRequest> getOverdueBooksData(){
+        List<BookRequest> list = new ArrayList<>();
+
+        list.add(new BookRequest(2,
                 2,
                 2,
-                "One Hundred Years of Solitude",
-                "Heera Khushi",
-                "20-03-2023",
-                "30-03-2023",
-                "approved")
+                "Book 2",
+                "User 2",
+                "02-03-2023",
+                "3.5")
         );
         return list;
     }
 
-    public static MyShelfBook getMyShelfDetails(int id){
-        List<MyShelfBook> list = getMyShelfBooks();
-        MyShelfBook myShelfBook = new MyShelfBook();
-        for (int i = 0; i < list.size(); i++) {
-            if(list.get(i).getId() == id) myShelfBook = list.get(i);
-        }
-        return myShelfBook;
-    }
-
-    public static BookRequest getRequestedBookData(int id) {
-        BookRequest book = new BookRequest();
-        List<BookRequest> list = getRequestedBooksData();
-        for (int i = 0; i < list.size(); i++) {
-            if(list.get(i).getId() == id) book = list.get(i);
-        }
-        return book;
-    }
-
-    public static List<BookRequest> getOverdueBooksData() {
-        List<BookRequest> list = getRequestedBooksData();
-        List<BookRequest> list_overdue = new ArrayList<>();
-
-        for (int i = 0; i < list.size(); i++) {
-            String requestedDate = list.get(i).getRequestedDate();
-            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-            Date strDate = null;
-            try {
-                strDate = sdf.parse(requestedDate);
-                Date due_date = addDay(strDate, 15);
-                if (new Date().after(due_date)) {
-                    //due true
-                    list_overdue.add(list.get(i));
-                }
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-        }
-        return list_overdue;
-    }
-
-    public static Date addDay(Date date, int i) {
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(date);
-        cal.add(Calendar.DAY_OF_YEAR, i);
-        return cal.getTime();
-    }
-
-    public static List<Author> getAuthorsData() {
+    public static List<Author> getAuthorsData(){
         List<Author> list = new ArrayList<>();
         list.add(new Author(1," F. Scott Fitzgerald",
                 "3.5",
@@ -165,16 +107,8 @@ public class common_helper {
         return list;
     }
 
-    public static Author getAuthorsDetails(int id) {
-        List<Author> list = getAuthorsData();
-        Author author = new Author();
-        for (int i = 0; i < list.size(); i++) {
-            if(list.get(i).getId() == id) author = list.get(i);
-        }
-        return author;
-    }
-
-    public static List<User> getUsersData() {
+    public static List<User> getUsersData()
+    {
         List<User> list = new ArrayList<>();
         list.add(new User("1",
                 "F. James",
@@ -195,7 +129,7 @@ public class common_helper {
         return list;
     }
 
-    public static User getUserDetails(String id) {
+    public static User getUserDetails(String id){
         User user = new User();
         List<User> list = getUsersData();
             for (int i = 0; i < list.size(); i++) {

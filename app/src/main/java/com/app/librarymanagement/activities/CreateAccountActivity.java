@@ -41,6 +41,7 @@ public class CreateAccountActivity extends BaseActivity {
     RadioGroup rgGender;
     String stPassword,stEmail,stConfPass,stName,stAddress,stMobile,stAge,stGender;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +68,7 @@ public class CreateAccountActivity extends BaseActivity {
         tvCreateAccount.setOnClickListener(this::signUp);
 
     }
+
 
     private void login(View view) {
         startActivity(new Intent(getApplicationContext(), LoginActivity.class));

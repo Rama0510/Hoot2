@@ -8,7 +8,7 @@ public class Author {
     private String rating;
     private int age;
     private String gender;
-    public Author(){}
+
     public Author(int id, String name, String rating, int age, String gender) {
         this.id = id;
         this.name = name;

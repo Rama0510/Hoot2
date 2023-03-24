@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E5E5E5"
     tools:context=".activities.Admin.MyUsersActivity">
+
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -14,7 +13,7 @@
     <LinearLayout
         android:id="@+id/activity_mentor_chat_recycler_view_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         >
         <RelativeLayout
@@ -25,6 +24,7 @@
                 android:id="@+id/btnBack"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
+                android:contentDescription="@string/app_name"
                 android:tint="@color/white"
                 android:padding="7dp"
                 android:clickable="true"
@@ -34,12 +34,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="50dp"
+                android:layout_marginStart="50dp"
                 android:padding="10dp"
                 android:layout_marginTop="8dp"
                 android:gravity="start"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:text="Add Book"
+                android:text="@string/add_book"
                 android:textColor="#FFFFFF"
                 />
         </RelativeLayout>
@@ -53,6 +53,7 @@
               android:layout_width="100dp"
               android:layout_height="100dp"
               android:tint="@color/secondary_dark"
+              android:contentDescription="@string/app_name"
               android:padding="7dp"
               android:layout_gravity="center"
               android:src="@drawable/ic_baseline_book_24"
@@ -64,6 +65,7 @@
               android:layout_height="46dp"
               android:background="@drawable/rounded_edittext"
               android:hint="enter book name"
+              android:autofillHints="name"
               android:inputType="text"
               android:paddingLeft="20dp"
               android:textColor="#000000"

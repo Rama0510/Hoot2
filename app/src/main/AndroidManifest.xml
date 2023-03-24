@@ -31,7 +31,7 @@
         <activity android:name=".activities.CreateAccountActivity"/>
 
         <!--    Activities Admin     -->
-
+        <activity android:name=".activities.Users.DashboardUserActivity"/>
         <activity android:name=".activities.Admin.DashboardAdminActivity"/>
         <activity android:name=".activities.Admin.MyUsersActivity"/>
         <activity android:name=".activities.Admin.AuthorsActivity"/>
@@ -51,10 +51,6 @@
         <activity android:name=".activities.Users.AuthorsActivity"/>
         <activity android:name=".activities.Users.MyShelvesActivity"/>
         <activity android:name=".activities.Users.MyDuesActivity"/>
-        <activity android:name=".activities.Users.BookDetailsActivity"/>
-        <activity android:name=".activities.Users.DashboardUserActivity"/>
-        <activity android:name=".activities.Users.BookShelfDetailsActivity"/>
-        <activity android:name=".activities.Users.AuthorDetailsActivity"/>
     </application>
 
 </manifest>

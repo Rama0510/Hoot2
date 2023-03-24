@@ -62,7 +62,7 @@ tools:context=".activities.Users.DashboardUserActivity">
             android:orientation="vertical"
             android:id="@+id/parent_layout">
             <TextView
-                android:id="@+id/tvAuthName"
+                android:id="@+id/user_view_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="9dp"
@@ -73,7 +73,7 @@ tools:context=".activities.Users.DashboardUserActivity">
                 android:textSize="30dp"
                 android:textColor="@color/secondary" />
                 <TextView
-                    android:id="@+id/tvAuthorAge"
+                    android:id="@+id/tvUserAge"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="9dp"

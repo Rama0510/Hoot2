@@ -6,7 +6,6 @@ plugins {
 android {
     namespace 'com.app.librarymanagement'
     compileSdk 33
-
     defaultConfig {
         applicationId "com.app.librarymanagement"
         minSdk 21
