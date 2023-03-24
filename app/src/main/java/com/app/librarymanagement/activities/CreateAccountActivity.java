@@ -41,6 +41,7 @@ public class CreateAccountActivity extends BaseActivity {
     RadioGroup rgGender;
     String stPassword,stEmail,stConfPass,stName,stAddress,stMobile,stAge,stGender;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
