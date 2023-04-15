@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/LibrarayManagement_3_person_4 (1).iml" filepath="$PROJECT_DIR$/.idea/LibrarayManagement_3_person_4 (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LibrarayManagement.iml" filepath="$PROJECT_DIR$/.idea/modules/LibrarayManagement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/LibrarayManagement.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/LibrarayManagement.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/LibrarayManagement.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/LibrarayManagement.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/LibrarayManagement.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/LibrarayManagement.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/LibrarayManagement.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/LibrarayManagement.app.unitTest.iml" />
     </modules>
   </component>
 </project>
