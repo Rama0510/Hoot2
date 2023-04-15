@@ -1,6 +1,96 @@
-# Hoot2
-Android 03
-Milestone 03
-                     #  Library Management System Android App
- 
- fantastic project concept Both users/students and library administrators would find an app that can manage a book library to be of greatutility.It's encouraging to learn that the app uses Cloud Firestore as the back-end database to store book and user information and Firebase Cloud Messaging to notify users in real-time. Another excellent strategy is to use Cloud Functions to keep an eye on the database and send out alerts.To make it simple for users to carry out a variety of tasks, like adding/removing/updating books,searching for books, issuing/re-issuing/returning books, and gathering fines, it's crucial to make sure the app has a user-friendly and interactive design.Also, it would be crucial to guarantee that the software is safe and that users' private data is secured.Overall, this project has great promise and may assist to simplify book management procedures for both consumers and library administrators.
+
+# Library Management Mobile Application
+
+A Library Management System mobile application manages and stores books information digitally according to student needs. The system helps both the students and library manager to keep a constant track of all the books available in the library. It reduces the frequency of students going to library to just enquire about the availability of books and eases the work of a librarian.
+
+
+
+![Logo](https://firebasestorage.googleapis.com/v0/b/librarymanagement-eba4f.appspot.com/o/online-library-logo-and-icons-for-your-mobile-app-vector-23494823-removebg-preview.png?alt=media&token=a58c5f3a-9d3d-4ef8-8a99-ba38cf31d534)
+
+
+## Team Members
+
+- [@ramadevi](https://www.github.com/)
+- [@naveen](https://www.github.com/)
+- [@gopikrishna](https://www.github.com/)
+- [@ishak](https://www.github.com/)
+
+
+## Requirements
+
+This project requires following tools & tech:
+
+- Android Studio
+- Database: Firebase Realtime Database
+- Works in Android 5.0
+- Layouts using: Linear, Relative, Contraint, Table.
+## Activities:
+
+###  Registration Activity
+
+•	Student can register their details to enter into the system.
+
+	Required input fields: 
+
+	Full Name
+	Email / Mobile 
+	Password
+	Date of Birth
+	Batch / Branch
+
+
+### Login Activity
+
+	Admin and Student both can login from the login activity
+
+	They are required to enter username/email/mobile & password.
+
+	The login credentials will be verified and the system will decide what user level can access to.
+
+	If the user authorized then the system will allow to the Dashboard.
+
+
+### Dashboard
+
+#### Admin Dashboard
+
+	Admin can track how many users had registered in to the system
+
+	Admin can track the books history and he can perform Add/Update/Delete actions.
+
+#### Add book Activity
+
+	Admin can add new books into system
+
+#### Update book Activity
+
+	Admin can modify the book details such as book title, description, available quantity, collect book from the student and etc.
+
+#### Requests for the books Activity
+
+    This activity will be having all the students requests for the books for the time of collection.
+
+#### Student dashboard
+
+	This activity has, search a book, my collection, books history, profile.
+
+	Based on the selected option the intend will be navigate to that particular Activity
+
+#### Search a book Activity
+
+	Student / Admin can search for a book with its title name or author name.
+
+	If we select a book, then it will show the Available books.
+
+	Now the system will preview user details like name, contact number and address then accept or cancel to request for the book.
+
+#### Raise a request to collect a book Activity
+
+	Student can send a request to the admin if he needs any book from the collection
+
+#### My Collection Activity
+
+	Student can check his requested books to collect Or student can cancel his request.
+
+#### My books history Activity
+	Student can see his due for the books to return them and returned books history.
