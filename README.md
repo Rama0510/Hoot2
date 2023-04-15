@@ -18,6 +18,9 @@ A Library Management System mobile application manages and stores books informat
 
 ## Requirements
 
+## App information
+Gradle version : 7.4 SDK version :33
+
 This project requires following tools & tech:
 
 - Android Studio
