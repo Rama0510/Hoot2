@@ -25,9 +25,9 @@ Min SDK : 21
 Supported devices : All android devices which run above android sdk level 20
 
 Credentials
-User ID : User@gmail.com Password : ramadevi13567@gmail.com
+User ID : ramadevi13567@gmail.com Password : user@123
 
-Officer ID : Officer@gmail.com Password: user@123
+
 
 
 
