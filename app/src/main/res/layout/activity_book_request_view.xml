@@ -123,7 +123,7 @@ tools:context=".activities.Users.DashboardUserActivity">
             android:maxLines="1"
             android:layout_gravity="center"
             android:textAlignment="center"
-            android:text="No of Books: 15"
+            android:text="No of Books: 0"
             android:textStyle="bold"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@color/gray" />
@@ -152,6 +152,29 @@ tools:context=".activities.Users.DashboardUserActivity">
             android:textColor="@color/white"
             android:background="@color/red"/>
     </LinearLayout>
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Rejected"
+        android:visibility="gone"
+        android:drawableRight="@drawable/ic_baseline_close_24"
+        android:drawableTint="@color/white"
+        android:id="@+id/btnCanceled"
+        android:textColor="@color/white"
+        android:background="@color/red"/>
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Approved"
+        android:visibility="gone"
+        android:drawableRight="@drawable/ic_baseline_check_24"
+        android:drawableTint="@color/white"
+        android:id="@+id/btnAccepted"
+        android:drawablePadding="10dp"
+        android:textColor="@color/white"
+        android:background="@color/green"/>
     </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

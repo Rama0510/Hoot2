@@ -49,14 +49,20 @@ public class OverDueBooksAdapter extends RecyclerView.Adapter<OverDueBooksAdapte
         holder.request_user_name.setText(book.getUserName());
         holder.tvCollectDate.setText("On date: "+book.getRequestedDate());
         holder.tvDueDate.setText("Due On: "+book.getRequestedDate());
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         Date strDate = null;
         try {
             strDate = sdf.parse(book.getRequestedDate());
             Date dueDate = addDay(strDate,15);
             long time_difference = new Date().getTime() - dueDate.getTime();
             long days_difference = (time_difference / (1000*60*60*24)) % 365;
-            holder.tvDueDate.setText("Overdue: "+ days_difference);
+            if(days_difference > 0){
+                holder.tvDueDate.setText("Overdue: "+ days_difference+" Days");
+                holder.tvDueDate.setVisibility(View.VISIBLE);
+            }
+            else{
+                holder.tvDueDate.setVisibility(View.GONE);
+            }
         }catch (ParseException e) {
             e.printStackTrace();
         }

@@ -32,7 +32,7 @@ public class BooksActivity extends AppCompatActivity {
         setContentView(R.layout.activity_all_books);
         setUpRecyclerView();
         findViewById(R.id.btnBack).setOnClickListener(view->{
-            this.finish();
+            startActivity(new Intent(this,DashboardAdminActivity.class));
         });
         ImageView addBook = findViewById(R.id.addBook);
 

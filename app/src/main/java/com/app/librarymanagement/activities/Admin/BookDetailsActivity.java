@@ -26,7 +26,7 @@ public class BookDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_details);
         findViewById(R.id.btnBack).setOnClickListener(view->{
-            this.finish();
+            startActivity(new Intent(this,RequestedBooksActivity.class));
         });
         tvBookName = findViewById(R.id.tvBookName);
         tvAuthor = findViewById(R.id.tvAuthor);

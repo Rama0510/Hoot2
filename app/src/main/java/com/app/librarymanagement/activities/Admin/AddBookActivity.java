@@ -42,7 +42,7 @@ public class AddBookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_book);
         findViewById(R.id.btnBack).setOnClickListener(view->{
-            this.finish();
+            startActivity(new Intent(this,BooksActivity.class));
         });
         spAuthors = findViewById(R.id.spAuthors);
         bookName = findViewById(R.id.bookName);

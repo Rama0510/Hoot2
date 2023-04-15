@@ -37,7 +37,7 @@ public class AuthorDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_author_details);
         findViewById(R.id.btnBack).setOnClickListener(view->{
-            this.finish();
+            startActivity(new Intent(this,AuthorsActivity.class));
         });
         Intent intent = getIntent();
         if (null != intent) {

@@ -162,29 +162,16 @@ public class BookDetailsActivity extends AppCompatActivity {
         String date = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
 
         BookRequest request = new BookRequest(uKey, book.getId(), mAuth.getUid(), book.getName(),
-                uName, date, "pending");
+                uName, date, "Pending");
 
         mDatabase.child("book_requests").child(uKey).setValue(request)
                        .addOnSuccessListener(command -> {
                            Toast.makeText(this,"Request sent!",Toast.LENGTH_SHORT).show();
-                           updateBookCount(book);
+                           startActivity(new Intent(this,FindBooksActivity.class));
                        })
                        .addOnFailureListener(command ->
                                Toast.makeText(this, "failed to send request!", Toast.LENGTH_SHORT).show()
                        );
-        Toast.makeText(this, "Request Sent!", Toast.LENGTH_SHORT).show();
     }
 
-    private void updateBookCount(Book book){
-        Book updateBook = new Book(book.getId(),book.getAuth_id(),book.getName(),
-                book.getShortDescription(),book.getLongDescription(),book.getRating(),book.getPublished(),(book.getCount() -1),book.getLikes());
-        FirebaseDatabase.getInstance().getReference().child("books").child(book.getId()).setValue(updateBook)
-                .addOnSuccessListener(command -> {
-                    Toast.makeText(this,"Updated!",Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(this,FindBooksActivity.class));
-                })
-                .addOnFailureListener(command ->
-                        Toast.makeText(this, "failed to add book!", Toast.LENGTH_SHORT).show()
-                );
-    }
 }

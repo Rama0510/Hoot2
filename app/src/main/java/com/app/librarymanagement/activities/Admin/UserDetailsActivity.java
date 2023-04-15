@@ -31,7 +31,7 @@ public class UserDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_details);
         findViewById(R.id.btnBack).setOnClickListener(view->{
-            this.finish();
+            startActivity(new Intent(this,MyUsersActivity.class));
         });
 
         tvUserName= findViewById(R.id.tvUserName);

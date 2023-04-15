@@ -1,6 +1,7 @@
 package com.app.librarymanagement.activities.Admin;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -30,7 +31,7 @@ public class MyUsersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_all_users);
         setUpRecyclerView();
         findViewById(R.id.btnBack).setOnClickListener(view->{
-            this.finish();
+            startActivity(new Intent(this,DashboardAdminActivity.class));
         });
     }
 

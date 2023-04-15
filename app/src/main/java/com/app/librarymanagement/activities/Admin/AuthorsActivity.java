@@ -40,7 +40,7 @@ public class AuthorsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_all_authors);
 
         findViewById(R.id.btnBack).setOnClickListener(view->{
-            this.finish();
+            startActivity(new Intent(this,DashboardAdminActivity.class));
         });
         findViewById(R.id.addAuthor).setOnClickListener(view->{
             startActivity(new Intent(this, AddAuthorActivity.class));

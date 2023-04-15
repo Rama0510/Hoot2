@@ -46,7 +46,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tvMsg"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            android:gravity="center"
+            android:text="no records found!"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
