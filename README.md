@@ -18,8 +18,16 @@ A Library Management System mobile application manages and stores books informat
 
 ## Requirements
 
-## App information
-Gradle version : 7.4 SDK version :33
+##Gradle version : 7.4
+SDK version :33
+Min SDK : 21
+
+Supported devices : All android devices which run above android sdk level 20
+
+Credentials
+User ID : User@gmail.com Password : ramadevi13567@gmail.com
+
+Officer ID : Officer@gmail.com Password: user@123
 
 
 
